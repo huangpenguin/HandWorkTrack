@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MoverioSDKSample2</string>
+    <string-array name="list_assignable_keycode">
+        <item>KEYCODE_VOLUME_UP</item>
+        <item>KEYCODE_VOLUME_DOWN</item>
+        <item>KEYCODE_FUNCTION</item>
+        <item>KEYCODE_HOME</item>
+        <item>KEYCODE_BACK</item>
+        <item>KEYCODE_APP_SWITCH</item>
+        <item>KEYCODE_F1</item>
+        <item>KEYCODE_F2</item>
+        <item>KEYCODE_F3</item>
+        <item>KEYCODE_F4</item>
+    </string-array>
+</resources>

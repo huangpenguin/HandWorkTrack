@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ToggleButton
+        android:id="@+id/toggleButton_audioOpenClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="Audio close"
+        android:textOn="Audio open" />
+
+    <TextView
+        android:id="@+id/textView_volume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volume" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_volumeDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Down" />
+
+        <Button
+            android:id="@+id/button_volumeUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Up" />
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/switch_volumeLimitMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:showText="true"
+        android:text="Volume limit"
+        android:textOff="OFF"
+        android:textOn="ON" />
+
+    <Switch
+        android:id="@+id/switch_deviceMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:showText="true"
+        android:text="Device mode"
+        android:textOff="Builtin audio"
+        android:textOn="Audio jack" />
+
+    <TextView
+        android:id="@+id/textView_gainStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GainStep" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_gainStepDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Down" />
+
+        <Button
+            android:id="@+id/button_gainStepUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Up" />
+    </LinearLayout>
+</LinearLayout>

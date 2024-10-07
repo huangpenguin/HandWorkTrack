@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subtitle demo"
+        android:textOff="Demo start"
+        android:textOn="Demo stop" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton_demoStartStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton" />
+
+    <TextView
+        android:id="@+id/textView_screenHorizontalShiftStep_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Screen horizontal shift step" />
+
+    <SeekBar
+        android:id="@+id/seekBar_screenHorizontalShiftStep_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="36"
+        android:min="0" />
+
+    <TextView
+        android:id="@+id/textView_fontSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Font size" />
+
+    <SeekBar
+        android:id="@+id/seekBar_fontSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:min="1" />
+
+</LinearLayout>
