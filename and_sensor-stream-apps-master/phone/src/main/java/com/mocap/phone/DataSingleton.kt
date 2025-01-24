@@ -34,9 +34,9 @@ object DataSingleton {
     // streaming parameters
     const val IMU_MSG_SIZE = (5 + 23) * 4 // deltaT + timestamp(4) + data (22 float)
     const val PPG_MSG_SIZE = (4 + 16) * 4 // timestamp(4) + data (16 float)
-    const val IMU_PORT_LEFT = 65000
-    const val IMU_PORT_RIGHT = 65003
-    const val UDP_AUDIO_PORT = 65001
+    const val IMU_PORT_LEFT = 65003
+    const val IMU_PORT_RIGHT = 65004
+    const val UDP_AUDIO_PORT = 65005
     const val UDP_PPG_PORT = 65002
     const val AUDIO_BUFFER_SIZE = 2048
     const val DUAL_IMU_MSG_SIZE = (55) * 4 // dT + SW IMU msg without calib + PH IMU MSG
@@ -61,7 +61,7 @@ object DataSingleton {
 
     // shared preferences lookup
     const val IP_KEY = "com.mocap.phone.ip"
-    const val IP_DEFAULT = "192.168.1.138"
+    const val IP_DEFAULT = "192.168.137.1"
     const val PORT_KEY = "com.mocap.phone.port"
     const val IMU_PORT_DEFAULT = IMU_PORT_LEFT
     const val RECORD_LOCALLY_KEY = "com.mocap.phone.record_locally"

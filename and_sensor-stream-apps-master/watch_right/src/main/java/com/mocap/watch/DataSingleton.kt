@@ -49,7 +49,7 @@ object DataSingleton {
     const val AUDIO_BUFFER_SIZE = 2048 // bytes
 
     // standalone mode
-    const val UDP_IMU_PORT = 46001
+    var UDP_IMU_PORT = 46001
     const val UDP_AUDIO_PORT = 65001
     const val IP_DEFAULT = "192.168.0.12"
     const val IP_KEY = "com.mocap.watch.ip" // shared preferences lookup
@@ -98,4 +98,10 @@ object DataSingleton {
     fun setForwardQuat(array: FloatArray) {
         _forwardQuat.value = array
     }
+
+    //update ImuPort
+    fun setImuPort(port: Int) {
+        UDP_IMU_PORT = port
+    }
+
 }

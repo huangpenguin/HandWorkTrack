@@ -114,7 +114,7 @@ options = vision.HandLandmarkerOptions(base_options=base_options, num_hands=2, r
 detector = vision.HandLandmarker.create_from_options(options)
 
 # STEP 3: Load the input video.
-cap = cv2.VideoCapture('C:/Users/huang/Desktop/New folder/video/WIN_20240920_16_20_50_Pro.mp4')
+cap = cv2.VideoCapture('./video/WIN_20240920_16_20_50_Pro.mp4')
 cv2.namedWindow('Original Hand Detection', cv2.WINDOW_NORMAL)
 cv2.resizeWindow('Original Hand Detection', 600, 400)
 cv2.namedWindow('Kalman Filtered Hand Detection', cv2.WINDOW_NORMAL)
