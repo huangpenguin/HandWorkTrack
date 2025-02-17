@@ -1,0 +1,50 @@
+[project]
+name = "tome-package"
+readme = "readme.md"
+requires-python = ">=3.11"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+select = ["ALL"]
+# プロジェクトに応じて無視する警告がでてきたらここに追加する. 
+ignore = ["PLR0913", # 変数が6個以上。研究PJでは対応が難しいので除外。
+          "D100","D101","D102", "D107" # ドキュメントに関するルール。納品前にはコメントアウトして使用すること。
+        ]
+exclude = [
+    "__pycache__",
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint]
+extend-select = ["E226"]
+preview = true
+explicit-preview-rules = true
