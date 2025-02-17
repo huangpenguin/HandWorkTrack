@@ -1,0 +1,10 @@
+aenum
+torch
+numpy
+pandas
+matplotlib
+pynput
+einops
+bayesian_torch
+opencv-python
+pyrealsense2

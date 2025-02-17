@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: UNKNOWN
+Version: 0.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache 2.0 License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Requires-Dist: aenum
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: pynput
+Requires-Dist: einops
+Requires-Dist: bayesian_torch
+Requires-Dist: opencv-python
+Requires-Dist: pyrealsense2

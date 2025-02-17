@@ -29,6 +29,7 @@ fun RenderWatchOnlyUdp(
     imuStreamCallback: (Boolean) -> Unit,
     audioStreamCallback: (Boolean) -> Unit,
     ipSetCallback: () -> Unit,
+    portSetCallback: () -> Unit,
     finishCallback: () -> Unit
 ) {
 
@@ -37,6 +38,8 @@ fun RenderWatchOnlyUdp(
     val gravNum by gravDiff.collectAsState()
     val cal by calibrated.collectAsState()
     val ip by DataSingleton.ip.collectAsState()
+    val port by DataSingleton.port.collectAsState()
+
 
     // display information in a column
     ScalingLazyColumn(
@@ -78,6 +81,17 @@ fun RenderWatchOnlyUdp(
                         (audioState != AudioStreamState.Streaming),
                 onClick = { ipSetCallback() },
                 text = "Set Target IP"
+            )
+        }
+        item {
+            DefaultText(text = "Port: $port")
+        }
+        item {
+            DefaultButton(
+                enabled = (imuState != ImuStreamState.Streaming) &&
+                        (audioState != AudioStreamState.Streaming),
+                onClick = { portSetCallback() },
+                text = "Set Target Port"
             )
         }
         item {

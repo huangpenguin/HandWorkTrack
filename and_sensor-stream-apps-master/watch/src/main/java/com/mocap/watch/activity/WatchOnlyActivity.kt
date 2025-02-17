@@ -8,6 +8,7 @@ import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.*
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -48,12 +49,16 @@ class WatchOnlyActivity : ComponentActivity() {
             // retrieve stored IP and update DataSingleton
             val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
             val ip = sharedPref.getString(DataSingleton.IP_KEY, DataSingleton.IP_DEFAULT)
+            val port = sharedPref.getInt(DataSingleton.UDP_IMU_PORT_KEY, DataSingleton.UDP_IMU_PORT_DEFAULT)
             if (ip == null) {
                 DataSingleton.setIp(DataSingleton.IP_DEFAULT)
                 DataSingleton.IP_DEFAULT
             } else {
                 DataSingleton.setIp(ip)
             }
+            DataSingleton.setPort(port)
+            //Toast.makeText(applicationContext, "This is the right hand with port: ${DataSingleton.getPort()}", Toast.LENGTH_LONG).show()
+
 
             // add Sensor Listeners with our calibrator callbacks
             _sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
@@ -81,6 +86,9 @@ class WatchOnlyActivity : ComponentActivity() {
                     gravDiff = _viewModel.gravDiff,
                     ipSetCallback = {
                         startActivity(Intent("com.mocap.watch.SET_IP"))
+                    },
+                    portSetCallback = {
+                        startActivity(Intent("com.mocap.watch.SET_PORT"))
                     },
                     imuStreamCallback = { _viewModel.imuStreamTrigger(it) },
                     audioStreamCallback = { _viewModel.audioStreamTrigger(it) },

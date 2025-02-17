@@ -45,7 +45,7 @@ class UdpImuService : BaseImuService() {
     private suspend fun susStreamData() {
 
         val ip = DataSingleton.ip.value
-        val port = DataSingleton.UDP_IMU_PORT
+        val port = DataSingleton.getPort()
 
         withContext(Dispatchers.IO) {
             try {

@@ -1,6 +1,7 @@
 package com.mocap.watch
 
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 
@@ -49,10 +50,24 @@ object DataSingleton {
     const val AUDIO_BUFFER_SIZE = 2048 // bytes
 
     // standalone mode
-    const val UDP_IMU_PORT = 46001
     const val UDP_AUDIO_PORT = 65001
-    const val IP_DEFAULT = "192.168.0.12"
+
+    const val IP_DEFAULT = "192.168.8.104"
     const val IP_KEY = "com.mocap.watch.ip" // shared preferences lookup
+
+    const val UDP_IMU_PORT_DEFAULT = 46000 //default left
+    const val UDP_IMU_PORT_KEY = "port_key"
+
+    private val _port = MutableStateFlow(UDP_IMU_PORT_DEFAULT)
+    val port: StateFlow<Int> get() = _port
+
+    fun setPort(newPort: Int) {
+        _port.value = newPort
+    }
+
+    fun getPort(): Int {
+        return _port.value
+    }
 
     // display recording activity labels in self-labelling mode
     // these labels must be identical to the DataSingleton on the phone
